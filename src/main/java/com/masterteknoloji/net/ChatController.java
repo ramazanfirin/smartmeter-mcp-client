@@ -16,8 +16,11 @@ import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import io.modelcontextprotocol.client.McpSyncClient;
 
@@ -56,5 +59,17 @@ public class ChatController {
 		chatHistory.add(assistantMessage);
 
 		return llmResponseContent;
+	}
+
+	@PostMapping("/freeSpeech/")
+	public String freeSpeech(@RequestParam("audio") MultipartFile audio) {
+		try {
+			LOG.info("Ses dosyası alındı: " + audio.getOriginalFilename());
+			// Ses dosyasını işle
+			return "Ses dosyası alındı";
+		} catch (Exception e) {
+			LOG.error("Ses dosyası işlenirken bir hata oluştu", e);
+			return "Ses dosyası işlenirken bir hata oluştu";
+		}
 	}
 }

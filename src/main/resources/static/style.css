@@ -81,3 +81,32 @@ body {
 .chat-input button:hover {
     background-color: #054a41;
 }
+
+.voice-input {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.voice-input button {
+    padding: 10px 15px;
+    background-color: #075e54;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 5px;
+}
+
+.voice-input button:disabled {
+    background-color: #ddd;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.voice-input button:hover {
+    background-color: #054a41;
+}
