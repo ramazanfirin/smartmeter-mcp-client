@@ -1,0 +1,19 @@
+spring.ai.mcp.client.sse.connections:
+  smartmeter-mcp-server:
+    url: http://localhost:8040
+
+
+#spring:
+#  ai:
+#    openai:
+#      api-key: 
+
+spring:
+  ai:
+    openai:
+      api-key: AIzaSyAgZ_ukO8DoLFCVHaL1opvNk_YfqJjC4II
+      base-url: https://generativelanguage.googleapis.com/v1beta/openai
+      chat:
+        completions-path: /chat/completions
+        options:
+          model: gemini-2.0-flash-exp    
